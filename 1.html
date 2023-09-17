@@ -1,1 +1,59 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webstar Loader</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: white;
+            transition: background-color 1s ease;
+        }
+        
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        h1 {
+            font-size: 3rem;
+            animation: fadeOut 3s linear 1s 1 normal forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <h1>Webstar</h1>
+    </div>
+    <iframe src="https://webtabs-98b3f3eaa095.herokuapp.com/" frameborder="0" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe>
+
+    <script>
+        // After 3 seconds, fade out the loader and change the background color
+        setTimeout(function () {
+            document.getElementById("loader").style.opacity = 0;
+            document.body.style.backgroundColor = "transparent";
+        }, 3000);
+    </script>
+</body>
+</html>
